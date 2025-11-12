@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="adminStyle.css">
+  <title>UniBot - Admin Panel</title>
+</head>
+<body class="light">
+  
+  <header>
+    <h1>🔧 UniBot Admin</h1>
+    <div class="header-actions">
+      <button id="themeToggle">🌙</button>
+      <button id="backToChat" style="display: none;">Back to Chat</button>
+      <button id="logoutBtn" style="display: none;">Logout</button>
+    </div>
+  </header>
+
+  <!--Login form-->
+  <div class="login-container" id="loginContainer">
+    <div class="login-form">
+      <h2>Admin Login</h2>
+      <div id="loginError" class="error-message" style="display: none;"></div>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+      </div>
+      <button id="loginBtn" style="width: 100%;">Login</button>
+    </div>
+  </div>
+
+  <!--Admin dashboard-->
+  <div class="admin-container" id="adminContainer" style="display: none;">
+    <div class="admin-header">
+      <h2>FAQ Management</h2>
+      <button id="addFaqBtn">Add New FAQ</button>
+    </div>
+    
+    <div id="faqList" class="faq-grid">
+      <!--FAQs will show here-->
+    </div>
+  </div>
+
+  <!--FAQ Modal-->
+  <div id="faqModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">Add FAQ</h3>
+        <span class="close" id="closeModal">&times;</span>
+      </div>
+      
+      <div id="modalError" class="error-message" style="display: none;"></div>
+      
+      <div class="form-group">
+        <label for="faqQuestion">Question:</label>
+        <input type="text" id="faqQuestion" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="faqAnswer">Answer:</label>
+        <textarea id="faqAnswer" rows="4" required></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="keywordInput">Keywords:</label>
+        <input type="text" id="keywordInput" placeholder="Type keyword and press Enter">
+        <div id="keywordsList" class="keywords-input"></div>
+      </div>
+      
+      <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+        <button id="cancelBtn" class="btn-secondary">Cancel</button>
+        <button id="saveFaqBtn">Save FAQ</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 UniBot Admin | Developed by bugblazer</p>
+  </footer>
+  <script src="adminScript.js"></script>
+</body>
+</html>
